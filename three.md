@@ -83,7 +83,7 @@ pre-made pastry
 3 tablespoons flour
 1 cup sugar
 *1 tablespoon of cinnamon*
-8 Granny Smith apples
+9 Granny Smith apples
 ```
 $ git log --oneline
 ```
@@ -97,5 +97,55 @@ dfc5f59 First commit
                     dfc5
 ```
       
+## Merge
+* Merge is just a commit with two parents
+* git switch main
+* git merge ideas
+```
+Auto-merging recipes/apple_pie.txt
+CONFLICT (content): Merge conflict in recipes/apple_pie.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+* cat recipes/apple_pie.txt
+```
+Apple Pie
 
+pre-made pastry
+1/2 cup butter
+3 tablespoons flour
+1 cup sugar
+<<<<<<< HEAD
+8 Granny Smith apples
+=======
+1 tablespoon of cinnamon
+9 Granny Smith apples
 
+>>>>>>> ideas
+
+```
+* git add * && git commit
+* git log --oneline
+```
+6e08961 (HEAD -> main) Merge branch 'ideas'
+023ba36 (ideas) Add tweaked apple per receipe 
+daa1a21 Add apple pie recipe
+eff0545 Add more cake
+dfc5f59 First commit
+```
+* git cat-file 6e08 -p
+```
+tree f45ede287590e34ba35ee778984bb8a142f23144
+parent daa1a21330bb98c3362e1876eead0d11d95e6f5f
+parent 023ba36aaea583ad94215effffe9011d2f942675
+author Nav <navneet.sahay@gmail.com> 1631212435 -0400
+committer Nav <navneet.sahay@gmail.com> 1631212435 -0400
+
+Merge branch 'ideas'
+```
+
+```
+        HEAD> main> 6e08
+               daa1      023b < idea < HEAD
+                    eff0 
+                    dfc5
+```
