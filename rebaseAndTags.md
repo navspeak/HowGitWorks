@@ -108,4 +108,4 @@ Note the changed commits for Sphagetti initial & Sphagetti second
                                     (ce379bc)
     ```
 * Annotated tag is like a branch that points to a Tag object which points to a commit
-* Lightweight tag directly points to a commit    
+* Lightweight tag directly points to a commit. They are almost identical to a branch, just that they don't move.
