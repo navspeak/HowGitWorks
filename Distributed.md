@@ -34,3 +34,10 @@
     * $ git show-ref sphagetti => points to only remote. Once you switch locally it will have refs to refs/head i.e. local
 `       * 30424b937aec795ed2a782eee7b149417e619407 refs/remotes/origin/sphagetti
 
+## Push
+* Let's make one commit locally
+```
+git commit -m "Lemon juice"
+[main e4ff473] Lemon juice
+ 1 file changed, 1 insertion(+)
+```
