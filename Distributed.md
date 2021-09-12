@@ -41,3 +41,19 @@ git commit -m "Lemon juice"
 [main e4ff473] Lemon juice
  1 file changed, 1 insertion(+)
 ```
+* See that main locally points to the new commit. Origin does not know about it yet and points to the old commit
+```
+$ git show-ref main
+e4ff4732b3e6b45d1e9db8c6d09ad0bdd1ef32e1 refs/heads/main
+30424b937aec795ed2a782eee7b149417e619407 refs/remotes/origin/main
+```
+* NOTE: You can't push directly to a non-bare repository (github is a bare directory with no working tree. However your local repository folder is non-bare as it has a working tree)
+* git push
+$ git show-ref main
+```
+e4ff4732b3e6b45d1e9db8c6d09ad0bdd1ef32e1 refs/heads/main
+e4ff4732b3e6b45d1e9db8c6d09ad0bdd1ef32e1 refs/remotes/origin/main
+```
+
+## Pull
+
