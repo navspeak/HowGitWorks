@@ -55,5 +55,105 @@ e4ff4732b3e6b45d1e9db8c6d09ad0bdd1ef32e1 refs/heads/main
 e4ff4732b3e6b45d1e9db8c6d09ad0bdd1ef32e1 refs/remotes/origin/main
 ```
 
-## Pull
+## Pull = git fetch + merge
+```
+Remote
+             [Main]
+             o 
+ ========
+Local
+
+             [Main]
+             o
+             [origin/main]
+```
+* Added one commit
+```
+
+
+Remote
+             [Main]
+             o 
+
+Local
+
+                               [Main]
+             o  <--------------- D
+             [origin/main]
+
+and Pushed
+
+Remote
+                             [Main]
+             o  <------------ D
+
+Local
+
+                               [Main]
+             o  <--------------- D
+                               [origin/main]
+
+If someone pushed before we could = Conflict
+
+
+Remote
+                              [Main]
+             o <---------------- 8
+
+Local
+
+                               [Main]
+             o  <--------------- D
+             [origin/main]
+
+Option 1 : git push -f (not recommended)
+
+
+Remote
+                    ----8 (garbage collected eventually)
+                < --|           [Main]
+             o <---------------- D
+
+Local
+
+                               [Main]
+             o  <--------------- D
+             [origin/main]
+
+Option 2: Better
+Resolve conflict locally: Git fetch
+
+Remote
+                              [Main]
+             o <---------------- 8
+
+Local                         [origin/main]
+                 <---------------8
+             o                  [Main]
+                 <--------------- D
+Git Merge:
+
+Remote
+                              [Main]
+             o <---------------- 8
+
+                          [origin/main]
+                 <---------------8
+             o                             D8 [Main]
+                 <--------------- D
+             
+
+Git push
+Remote
+                          
+                 <---------------8   
+             o                             D8 [Main]
+                 <--------------- D
+             
+
+                                             [origin/main]
+                 <---------------8   
+             o                             D8 [Main]
+                 <--------------- D
+             
 
