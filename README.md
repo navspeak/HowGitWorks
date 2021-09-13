@@ -34,4 +34,7 @@
  * In above example we have staged a change, so we can do:
     * git reset HEAD to unstage it (~git rm --cached)
     * git reset --hard HEAD to unstage and remove that from working area too
-  
+ 
+# Stash: clipboard for your working area
+* git stash --include-untracked (use this option if you want to stash unstaged file)
+   
