@@ -93,6 +93,7 @@ Local
                                [Main]
              o  <--------------- D
                                [origin/main]
+```                               
 
 * All fine till here, but if someone pushed before we could = Conflict
 
@@ -124,6 +125,7 @@ Local
 ```             
 
 * Option 2: Better: Resolve conflict locally: 
+
         * Git fetch
 ```
 Remote
