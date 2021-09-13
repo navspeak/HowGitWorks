@@ -163,4 +163,47 @@ Remote
              o                             D8 [Main]
                  <--------------- D
 ```             
+## Never rebase shared commits
 
+```
+Remote and local:
+         < A [main]
+   o 
+          < B [ideas]
+```
+* Say we are on ideas and rebase to main (git switch ideas && git rebase main)
+```
+Remote
+         < A [main]
+   o 
+          < B [ideas]
+local:
+         < A [main] <---- B' [ideas]
+   o 
+          < B [Garbage Collected]
+```
+* git fetch and merge
+```
+Remote
+         < A [main]
+   o 
+          < B [ideas]
+local:
+         < A [main] <---- B'
+   o                                    B" [ideas]
+          < B [origin/ideas]
+          < B [Garbage Collected]
+```
+* git push
+```
+Remote
+         < A [main] <---- B'
+   o                               B"" [ideas]
+         < B 
+local:
+         < A [main] <---- B'
+   o                                    B" [ideas]
+          < B [origin/ideas]
+                                                                             < B [Garbage Collected]
+```
+* So we actually have two commits that look exactly the same B and B' plus B" is the merged one. This defeats the purpose.
