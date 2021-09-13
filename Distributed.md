@@ -80,9 +80,10 @@ Local
                                [Main]
              o  <--------------- D
              [origin/main]
+```
 
-and Pushed
-
+* and Pushed
+```
 Remote
                              [Main]
              o  <------------ D
@@ -93,9 +94,9 @@ Local
              o  <--------------- D
                                [origin/main]
 
-If someone pushed before we could = Conflict
+* All fine till here, but if someone pushed before we could = Conflict
 
-
+```
 Remote
                               [Main]
              o <---------------- 8
@@ -105,24 +106,26 @@ Local
                                [Main]
              o  <--------------- D
              [origin/main]
+```
 
-Option 1 : git push -f (not recommended)
-
+* Option 1 : git push -f (not recommended)
+```
 
 Remote
-                    ----8 (garbage collected eventually)
-                < --|           [Main]
-             o <---------------- D
+                    /----8 (garbage collected eventually)
+                o                 [Main]
+                 <---------------- D
 
 Local
 
                                [Main]
              o  <--------------- D
-             [origin/main]
+                        [origin/main]
+```             
 
-Option 2: Better
-Resolve conflict locally: Git fetch
-
+* Option 2: Better: Resolve conflict locally: 
+        * Git fetch
+```
 Remote
                               [Main]
              o <---------------- 8
@@ -131,19 +134,21 @@ Local                         [origin/main]
                  <---------------8
              o                  [Main]
                  <--------------- D
-Git Merge:
-
+```
+        * Git Merge:
+```
 Remote
                               [Main]
              o <---------------- 8
-
+Local
                           [origin/main]
                  <---------------8
              o                             D8 [Main]
                  <--------------- D
-             
+```             
 
-Git push
+        * Git push
+```        
 Remote
                           
                  <---------------8   
@@ -155,5 +160,5 @@ Remote
                  <---------------8   
              o                             D8 [Main]
                  <--------------- D
-             
+```             
 
