@@ -207,3 +207,4 @@ local:
                                                                              < B [Garbage Collected]
 ```
 * So we actually have two commits that look exactly the same B and B' plus B" is the merged one. This defeats the purpose.
+* =============
