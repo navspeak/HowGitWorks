@@ -44,7 +44,8 @@
 * Git checkout normally moves HEAD in the repository to a the commit hash or branch, and copies the files to working area
 * _Git checkout HEAD x.txt_ => will copy x.txt from repository to working area
    * use with caution as you get no warning
-   
+*  git checkout -b branch2 origin/Branch1 => create and switch to new branch at specific commit
+  
  
 # [Stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash): clipboard for your working area
 * git stash --include-untracked (use this option if you want to stash unstaged file)
@@ -88,5 +89,11 @@
       50a37c1 (origin/main, origin/HEAD, main) Nav in Branch1 change (#1)
    ```
   # Fixing History
-   
+  * Rebase: git switch main | git rebase sphagetti => Read this as "Take Main branch and change its base to Sphagetti"
+      * Never rebase shared commits
+  * For current commit: git commit --amend (change message in current) => will create new commit, old one will be garbage collected
+  * Fixing old commits (do for commits not shared)
+      * git rebase -i and git continue
+  * git merge --squash branch2
+
    
