@@ -21,7 +21,7 @@
              (F)                                            
 
 ```
-## concreate example
+## concrete example
 ```
 $ git log --graph --oneline
 * f918158 (HEAD -> main) Tweaked again
