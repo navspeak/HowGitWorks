@@ -95,5 +95,11 @@
   * Fixing old commits (do for commits not shared)
       * git rebase -i and git continue
   * git merge --squash branch2
+  * git reflog HEAD => shows to where HEAD has so far pointed => we can get the hash of any prev commit and do a git show
+  * git show HEAD@{10}
+  * git reflog refs/heads/main
+  * git filter-branch and optional install of  "git filter-repo --path 1.txt --invert-paths"
+  * https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-the-git-repository
+  * git revert <commit> => undo changes in commit. Use caution when reverting merge commit
 
    
