@@ -102,5 +102,8 @@
   * https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-the-git-repository
   * git revert <commit> => undo changes in commit. Use caution when reverting merge commit
   * https://gist.github.com/mathiasverraes/1337397
+   
+  ## Diffs
+  * git diff hash1 hash2 -- file1 file2
 
    
